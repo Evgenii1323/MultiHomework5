@@ -10,6 +10,12 @@ public class PhoneBook {
     }
 
     public String findByNumber(String phone) {
-        return null;
+        String key = null;
+        for (String i : map.keySet()) {
+            if (map.get(i).equals(phone)) {
+                key = i;
+            }
+        }
+        return key;
     }
 }
