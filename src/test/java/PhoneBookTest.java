@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class PhoneBookTest {
     @Test
-    public void testAdd() {
+    public void testAdd () {
         String name = "Jack";
         String phone = "12345";
         int expected = 1;
@@ -36,5 +36,22 @@ public class PhoneBookTest {
         String result = phoneBook.findByName(name);
 
         Assertions.assertEquals(phone, result);
+    }
+
+    @Test
+    public void testPrintAllNames() {
+        String name = "Jack";
+        String phone = "12345";
+        String name1 = "John";
+        String phone1 = "123";
+        String expected = "Jack John ";
+
+
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add(name1, phone1);
+        phoneBook.add(name, phone);
+        String result = phoneBook.printAllNames();
+
+        Assertions.assertEquals(expected, result);
     }
 }
